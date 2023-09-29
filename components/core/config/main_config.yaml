@@ -12,6 +12,12 @@ agent:
   actor:
     actor_type: "Heuristic"
 
+data_pre_process:
+  test_size: 0.25
+  shuffle: True
+  num_feature_columns: null
+  num_label_columns: 6
+  include_id: true
 
 
 hydra:
