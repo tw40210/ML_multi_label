@@ -1,0 +1,6 @@
+/data/
+/py_env/
+/.idea/
+/.mypy_cache/
+/.pytest_cache/
+*/logs
