@@ -1,0 +1,22 @@
+defaults:
+  - _self_
+  - environment@: ML
+
+experiment:
+  name: my_ML
+  seed: 43
+
+agent:
+  name: my_agent
+  agent_type: "Heuristic"
+  actor:
+    actor_type: "Heuristic"
+
+
+
+hydra:
+  run:
+    dir: logs/${experiment.name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: logs/${experiment.name}
+    subdir: ${hydra.job.override_dirname}

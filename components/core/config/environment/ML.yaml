@@ -1,0 +1,9 @@
+env:
+  generator:
+    type: "Random"
+  is_jit: true
+
+
+defaults:
+  - ../environment@env.reward:
+      - reward
