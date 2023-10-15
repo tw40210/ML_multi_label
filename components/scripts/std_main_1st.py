@@ -34,10 +34,10 @@ for dirpath, dirnames, filenames in os.walk(directory):
         globals()[file_name] = pd.read_csv(file_path)
         # print(file_name)
 
-train = pd.read_csv(Path(core.DATA_PATH)/"train.csv")
-test = pd.read_csv(Path(core.DATA_PATH)/"test.csv")
-mixed_desc = pd.read_csv(Path(core.DATA_PATH)/"mixed_desc.csv")
-sample_submission = pd.read_csv(Path(core.DATA_PATH)/"sample_submission.csv")
+train = pd.read_csv(Path(core.DATA_PATH)/"Enzyme_Substrate/train.csv")
+test = pd.read_csv(Path(core.DATA_PATH)/"Enzyme_Substrate/test.csv")
+mixed_desc = pd.read_csv(Path(core.DATA_PATH)/"Enzyme_Substrate/mixed_desc.csv")
+sample_submission = pd.read_csv(Path(core.DATA_PATH)/"Enzyme_Substrate/sample_submission.csv")
 
 
 
@@ -315,5 +315,6 @@ print("over_train", np.mean(over_train))
 print("over_valid", np.mean(over_valid))
 
 sample_submission.iloc[:,1:] = (test_preds_xgb+test_preds_lgbm)/2
+
 
 sample_submission.to_csv("submission.csv",index=False)
